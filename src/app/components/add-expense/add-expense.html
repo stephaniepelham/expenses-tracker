@@ -1,0 +1,32 @@
+<div class="card p-4">
+  <h3>Add Expense</h3>
+
+  <div class="mb-3">
+    <label>Title</label>
+    <input class="form-control"
+           [(ngModel)]="title">
+  </div>
+
+  <div class="mb-3">
+    <label>Amount</label>
+    <input type="number"
+           class="form-control"
+           [(ngModel)]="amount">
+  </div>
+
+  <div class="mb-3">
+    <label>Category</label>
+    <select class="form-control"
+            [(ngModel)]="category">
+      <option value="">Select</option>
+      @for (cat of expenseService.categories(); track cat) {
+        <option [value]="cat">{{ cat }}</option>
+      }
+    </select>
+  </div>
+
+  <button class="btn btn-primary"
+          (click)="addExpense()">
+    Add
+  </button>
+</div>

@@ -1,0 +1,19 @@
+<div class="card p-3"
+     [class.border-danger]="expense.amount > 1000">
+
+  <h5>{{ expense.title }}</h5>
+
+  <p>
+    ${{ expense.amount }}
+  </p>
+
+  <span class="badge bg-secondary">
+    {{ expense.category }}
+  </span>
+
+  <button class="btn btn-danger btn-sm mt-2"
+          (click)="delete()">
+    Delete
+  </button>
+
+</div>
